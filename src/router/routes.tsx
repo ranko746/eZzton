@@ -98,17 +98,60 @@ const MarkDownEditor = lazy(() => import('../pages/Forms/MarkDownEditor'));
 const DateRangePicker = lazy(() => import('../pages/Forms/DateRangePicker'));
 const Clipboard = lazy(() => import('../pages/Forms/Clipboard'));
 
+// eZzton Routes
+const Login = lazy(() => import('../pages/eZzton/Login'));
+const Vehicles = lazy(() => import('../pages/eZzton/Vehicles'));
+const Clients = lazy(() => import('../pages/eZzton/Clients'));
+const Transactions = lazy(() => import('../pages/eZzton/Transactions'));
+
+const UserProfile = lazy(() => import('../pages/eZzton/admin/Profile'));
+const AdminUsers = lazy(() => import('../pages/eZzton/admin/Users'));
+const AdminVehicles = lazy(() => import('../pages/eZzton/admin/Vehicles'));
+const AdminDrivers = lazy(() => import('../pages/eZzton/admin/Drivers'));
+
 const routes = [
     {
         path: '/login',
-        element: <LoginBoxed />,
+        element: <Login />,
         layout: 'blank',
     },
-    // dashboard
     {
         path: '/',
-        element: <Index />,
+        element: <Vehicles />,
     },
+    {
+        path: '/clients',
+        element: <Clients />,
+    },
+    {
+        path: '/transactions',
+        element: <Transactions />,
+    },
+    {
+        path: '/admin/profile',
+        element: <UserProfile />,
+        layout: 'admin',
+    },
+    {
+        path: '/admin/users',
+        element: <AdminUsers />,
+        layout: 'admin',
+    },
+    {
+        path: '/admin/vehicles',
+        element: <AdminVehicles />,
+        layout: 'admin',
+    },
+    {
+        path: '/admin/drivers',
+        element: <AdminDrivers />,
+        layout: 'admin',
+    },
+    // dashboard
+    // {
+    //     path: '/',
+    //     element: <Index />,
+    // },
     // {
     //     path: '/index',
     //     element: <Index />,

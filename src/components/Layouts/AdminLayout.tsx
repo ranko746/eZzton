@@ -7,9 +7,10 @@ import Footer from './Footer';
 import Header from './Header';
 import Setting from './Setting';
 import Sidebar from './Sidebar';
+import AdminSidebar from './AdminSidebar';
 import Portals from '../../components/Portals';
 
-const DefaultLayout = ({ children }: PropsWithChildren) => {
+const AdminLayout = ({ children }: PropsWithChildren) => {
     const themeConfig = useSelector((state: IRootState) => state.themeConfig);
     const dispatch = useDispatch();
 
@@ -80,7 +81,7 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
 
                 <div className={`${themeConfig.navbar} main-container text-black dark:text-white-dark min-h-screen`}>
                     {/* BEGIN SIDEBAR */}
-                    <Sidebar />
+                    <AdminSidebar />
                     {/* END SIDEBAR */}
 
                     {/* BEGIN CONTENT AREA */}
@@ -106,4 +107,4 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
     );
 };
 
-export default DefaultLayout;
+export default AdminLayout;
